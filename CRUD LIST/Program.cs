@@ -1,15 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CRUD_LIST
 {
+    class Item
+    {
+        string name;
+        public Item(string _name)
+        {
+            this.name = _name;
+        }
+
+        public void PrintName()
+        {
+            Console.WriteLine(this.name);
+        }
+    }
+
+
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            Console.SetWindowSize(140, 40);
+            Item i0 = new Item(Console.ReadLine());
+            i0.PrintName();
+
         }
     }
 }
