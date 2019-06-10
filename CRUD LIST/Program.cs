@@ -68,7 +68,7 @@ namespace CRUD_LIST
                     //creating new item in the list
                     //need to test for name/position duplicates, correctness of input
                     Console.WriteLine("Please enter new item's Name and Position.");
-                    string[] tokens = Console.ReadLine().Split();
+                    string[] tokens = Console.ReadLine().Split(); // splits string on empty space
                     if (tokens.Length == 2) // check that there were 2 inputs
                     {
                         Name = tokens[0];
@@ -134,11 +134,12 @@ namespace CRUD_LIST
                             {
                                 Name = tokens[0];
                                 Position = tokens[1];
+                                
                                 for (int j = 0; j < ItemList.Count; j++) //checking for duplicates
                                 {
-                                    if (ItemList[j].Name == Name || ItemList[j].Position == Position)
+                                    if (ItemList[j].Name == Name && ItemList[j].Position == Position)
                                     {
-                                        Console.WriteLine("Item's attributes have to be unique. Type in HELP for HELP MENU");
+                                        Console.WriteLine("This item name already has this number. Type in HELP for HELP MENU");
                                         duplicate = true;
                                         break;
                                     }
